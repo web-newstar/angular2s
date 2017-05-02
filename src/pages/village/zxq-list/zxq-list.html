@@ -1,0 +1,163 @@
+<ion-header>
+  <ion-navbar class="header-nav-bar" hideBackButton="true">
+	  <div class="list-header-wrap">
+	  		<div class="top-search">
+				  <!--(click)="goMain()"-->
+				<a href="javascript:;" goMain >
+					<svg class="icon-angle-left">
+						<use xlink:href="#icon-angle-left-copy"></use>
+					</svg>
+				</a>
+				<div class="search-input">
+					<svg class="icon-search" aria-hidden="true">
+						<use xlink:href="#icon-search"></use>
+					</svg>
+					<input type="text" placeholder="请输入您要搜索的关键词" />
+				</div>
+			</div>
+			<div class="screening-box">
+				<span id="locationList">
+					<a href="javascript:;" (click)="SearchTypeClick('region')">
+						区域
+						<svg class="icon-triangle-down">
+							<use xlink:href="#icon-triangle-down-copy"></use>
+						</svg>
+					</a>
+				</span>
+				<span id="priceList">
+					<a href="javascript:;" (click)="SearchTypeClick('price')">
+						成交均价
+						<svg class="icon-triangle-down">
+							<use xlink:href="#icon-triangle-down-copy"></use>
+						</svg>
+					</a>
+				</span>
+				<span id="areaLsit">
+					<a href="javascript:;" (click)="SearchTypeClick('houseage')">
+						房龄
+						<svg class="icon-triangle-down">
+							<use xlink:href="#icon-triangle-down-copy"></use>
+						</svg>
+					</a>
+				</span>
+				<span id="moreList">
+					<a href="javascript:;" (click)="SearchTypeClick('more')">
+						更多
+						<svg class="icon-triangle-down">
+							<use xlink:href="#icon-triangle-down-copy"></use>
+						</svg>
+					</a>
+				</span>
+			</div>
+			<!-- screening list -->
+			<div class="locationCon" *ngIf="ShowRegion">
+				<h2>区域</h2>
+				<ul class="locationList-box">
+					<li>不限</li>
+					<li>莲都</li>
+					<li>龙泉</li>
+					<li>青田</li>
+					<li>缙云</li>
+					<li>庆元</li>
+					<li>遂昌</li>
+					<li>松阳</li>
+					<li>云和</li>
+					<li class="border-none">开发区</li>
+				</ul>
+			</div>
+			<div class="priceCon" *ngIf="ShowDealPrice">
+				<ul class="priceList-box">
+					<li>不限</li>
+					<li>50万以下</li>
+					<li>50-80万</li>
+					<li>80-100万</li>
+					<li>100-120万</li>
+					<li>120-150万</li>
+					<li>150-200万</li>
+					<li>200-300万</li>
+					<li>300万以上</li>
+					<li class="custom-line border-none">
+						<span>自定义价格</span>
+						<span>
+							<input class="input-define" type="text" placeholder="最低" maxlength="4" />
+						</span>
+						—
+						<span>
+							<input class="input-define" type="text" placeholder="最高" maxlength="4" />
+						</span>
+						<button class="determine-but">确定</button>
+					</li>
+				</ul>
+			</div>
+			<div class="areaCon" *ngIf="ShowHouseAge">
+				<ul class="areaList-box">
+					<li>不限</li>
+					<li>5年以内</li>
+					<li>5-10年</li>
+					<li>10-20年</li>
+					<li>20年以上</li>
+					<li class="border-none"></li>
+				</ul>
+			</div>
+			<div class="moreCon" *ngIf="ShowMore">
+				<ul class="moreList-box he1">
+					<li class="title">户型</li>
+					<li class="type">
+						<span>一室</span>
+						<span>二室</span>
+						<span>三室</span>
+						<span>四室</span>
+						<span>四室以上</span>
+					</li>
+				</ul>
+				<ul class="moreList-box he2">
+					<li class="title">来源</li>
+					<li class="type">
+						<span>个人</span>
+						<span>中介</span>
+					</li>
+				</ul>
+				<button id="filtrate-reset" class="remove-but">清空条件</button>
+				<button class="determine-but">确定</button>
+			</div>
+			<!-- screening list end -->
+	  </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding (click)="ContentClick()">
+    <div class="list-wrap" *ngFor="let item of DataList">
+		<div class="list-item" (click)="ItemClick(item)">
+			<a href="javascript:;">
+				<div class="pic-l">
+					<img src="{{item.picturePath == null ? '/assets/images/zhongj_default.jpg':(BaseImgUrl +item.picturePath) }}"></div>
+				<div class="txt-r">
+					<h3 class="area-name">{{item.plotName}}</h3>
+					<div class="same-line">
+						<span class="color-9">
+							挂牌房源：
+							<span class="color-8">{{item.totalCount}}</span>
+							套
+						</span>
+					</div>
+					<div class="same-line">
+						<span class="color-9">
+							成交均价：
+							<span>10000元/m²</span>
+						</span>
+					</div>
+					<div class="same-line" *ngIf="false">
+						<span class="color-9">
+							建筑年代：
+							<span>2001</span>
+							年
+						</span>
+					</div>
+				</div>
+			</a>
+		</div>
+    </div>
+	<ion-infinite-scroll (ionInfinite)="doLoadData($event)" threshold="100px" *ngIf="CanLoadMore">
+   <ion-infinite-scroll-content></ion-infinite-scroll-content>
+ </ion-infinite-scroll>
+</ion-content>

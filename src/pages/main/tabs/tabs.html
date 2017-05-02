@@ -1,0 +1,33 @@
+<ion-tabs id="myTabs">
+  <ion-tab [root]="tab1Root" tabTitle="首页" tabIcon="icon-home01"></ion-tab>
+  <ion-tab (ionSelect)="releaseBut()" tabTitle="发布" tabIcon="icon-release" ></ion-tab>
+  <ion-tab (ionSelect)="myinfoBut()" tabTitle="我的" tabIcon="icon-my" tabBadge="2"></ion-tab>
+  <div class="tab-release-wrap" *ngIf="ShowDg">
+    <div class="fb-but-box">
+		<div class="fb-top-but">
+			<div class="fy-but">
+				<a href="javascript:;">
+					<svg class="index-house-color">
+						<use xlink:href="#icon-house-color"></use>
+					</svg>
+				</a>
+				<span>发布房源</span>
+			</div>
+			<div class="qg-but">
+				<a href="javascript:;">
+					<svg class="index-editor-color">
+						<use xlink:href="#icon-editor-color"></use>
+					</svg>
+				</a>
+				<span>发布求购</span>
+			</div>
+		</div>
+		<div (click)="hide()" class="shut-down">
+			<svg class="index-release-cancel">
+				<use xlink:href="#icon-release-cancel"></use>
+			</svg>
+		</div>
+	</div>
+  </div>
+  
+</ion-tabs>

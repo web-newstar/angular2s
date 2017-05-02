@@ -1,0 +1,272 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+@font-face {font-family: "Ionicons";
+  src: url('../assets/font-icon/iconfont.eot?t=1490840193944'); /* IE9*/
+  src: url('../assets/font-icon/iconfont.eot?t=1490840193944#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../assets/font-icon/iconfont.woff?t=1490840193944') format('woff'), /* chrome, firefox */
+  url('../assets/font-icon/iconfont.ttf?t=1490840193944') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../assets/font-icon/iconfont.svg?t=1490840193944#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.ion-md-icon-home01:before,
+.ion-ios-icon-home01:before,
+.ion-ios-icon-home01-outline:before {
+   content: "\e634";
+}
+.ion-md-icon-my:before,
+.ion-ios-icon-my:before,
+.ion-ios-icon-my-outline:before {
+   content: "\e6a3";
+}
+.ion-md-icon-release:before{
+   content: "\e9c1";
+   background-color: #fff;
+   border-radius: 50%;
+   display: inline-block;
+   height: 48px;
+   padding-top: 3px;
+   border-top: 1px solid #e5e5e5;
+   box-shadow: 0 -2px 8px -1px #e5e5e5;
+}
+.ion-ios-icon-release:before,
+.ion-ios-icon-release-outline:before {
+   content: "\e9c1";
+   background-color: #fff;
+   border-radius: 50%;
+   display: inline-block;
+   height: 48px;
+   padding-top: 1px;
+   border-top: 1px solid #e5e5e5;
+   box-shadow: 0 -2px 8px -1px #e5e5e5;
+}
+
+//tabs 样式
+.tabs-md .tabbar{
+  height: 1.1rem;
+}
+#myTabs{
+  // .middle-tab{
+  //   position: absolute;
+  //   bottom: 16px;;
+  //   left: 50%;
+  //   margin-left:-25px;
+  //   z-index: 10;
+  //   .icon-release{
+  //     width: 50px;
+  //     height: 50px;
+  //   }
+  // }
+  #tab-t0-1{
+    overflow: inherit;
+    .tab-button-icon{
+      overflow: inherit;
+    }
+  }
+}
+.tabs-md{
+  #tab-t0-1{
+    .tab-button-text{
+      position: relative;
+      top: -16px;
+    }
+    .tab-button-icon{
+      position: relative;
+      top: -14px;
+      font-size: 50px;
+    }
+  }
+}
+.tabs-ios{
+  #tab-t0-1{
+    .tab-button-icon{
+      position: relative;
+      top: -22px;
+      font-size: 50px;
+    }
+  }
+}
+.tabs-md .tab-button[aria-selected=true]{
+  color: #00ae66;
+}
+.tabs-md .tab-button[aria-selected=true] .tab-button-icon{
+  color: #00ae66;
+}
+.tabs-ios .tab-button[aria-selected=true]{
+  color: #00ae66;
+}
+.tabs-ios .tab-button[aria-selected=true] .tab-button-icon{
+  color: #00ae66;
+}
+.badge-md{
+  background-color: #00ae66;
+}
+.badge-ios{
+  background-color: #00ae66;
+}
+//tabs 发布弹窗
+.tab-release-wrap{
+  //display: none;
+	position: absolute;
+	bottom:0;
+	left:0;
+	right: 0;
+	height: 100%;
+	z-index: 9999;
+	background: rgba(0,0,0,0.84);
+  .fb-but-box{
+    position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0.36rem;
+  }
+  .fb-top-but{
+    display: flex;
+    justify-content: space-between;
+    .fy-but{
+			margin-left: 0.83rem;
+			text-align: center;
+		}
+		.qg-but{
+			margin-right: 0.83rem;
+			text-align: center;
+		}
+		a{
+		  display: flex;
+			align-items: center;
+			-webkit-box-align: center;
+		  -webkit-align-items: center;
+		  -ms-flex-align: center;
+			justify-content: center;
+			-webkit-justify-content: center;
+			width: 1.36rem;
+			height: 1.36rem;
+			//display: block;
+			background-color: #fff;
+			border-radius: 50%;
+		}
+		span{
+			margin-top: 0.1rem;
+			display: block;
+			color: #fff;
+		}
+  }
+  .index-house-color{
+		width: 0.68rem;
+		height: 0.68rem;
+	}
+	.index-editor-color{
+		width: 0.68rem;
+		height: 0.68rem;
+	}
+	.shut-down{
+		width: 0.98rem;
+		height: 0.98rem;
+		margin: 0.42rem auto 0;
+		background-color: #fff;
+		border-radius: 50%;
+		.index-release-cancel{
+			width: 0.98rem;
+			height: 0.98rem;
+		}
+	}
+}
+
+//tabs 发布弹窗结束
+//tabs 样式结束
+//顶部 返回
+.new-header{
+  .toolbar{
+        .toolbar-background{
+            background: #00ae66;
+        }
+        .button{
+            font-size:0.4rem;
+        }
+        .button-ios{
+            margin: 0px;
+            height:auto;
+            background:none;
+        }
+        .back-button{
+            position: absolute;
+            z-index: 10;
+        }
+    }
+    .toolbar-md{
+      text-align: center;
+    }
+    .toolbar-title{
+      font-size: 0.4rem;
+      color:#fff;
+      font-weight: 400;
+  }
+  .back-button-ios{
+      font-size: 0.4rem;
+  }
+  .back-button-ios{
+      min-height:0.8rem;
+  }
+  .back-button-icon-ios{
+      font-size: 0.4rem;
+      color:#fff;
+  }
+  .back-button-icon-md{
+    font-size: 0.4rem;
+    color: #fff;
+  }
+  .back-button-text{
+    margin-bottom: 0.02rem;
+    color: #fff;
+    font-size: 0.3rem;
+  }
+  .bar-button-md{
+    padding: 0;
+  }
+  
+
+  .segment-ios{
+    .segment-button{
+      line-height:0.6rem;
+      height:0.6rem;
+      font-size:0.3rem;
+      background: #f6f6f6;
+      color:#888;
+      border:none;
+     }
+     .segment-button.segment-activated{
+          background: #f6f6f6;
+          color: #00ae66;
+        border-bottom: 3px solid #00ae66;
+     }
+  } 
+  
+  .segment-ios .segment-button:first-of-type {
+    margin-right: 0;
+    border-radius: 0px 0 0 0px;
+    }
+.segment-ios .segment-button:last-of-type {
+  margin-right: 0;
+  border-radius: 0px 0 0 0px;
+}
+}
+//顶部 返回 结束

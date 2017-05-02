@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>发布房源</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="font-icon/iconfont.js"></script>
+</head>
+<body>
+<div class="body-bg02">
+<!-- header -->
+	<header>
+		<div class="de-header02">
+			<a class="on_page01" href="javascript:;">
+				<svg class="icon-angle-left">
+					<use xlink:href="#icon-angle-left-copy"></use>
+				</svg>
+			</a>
+			<h1>发布房源</h1>
+		</div>
+	</header>
+<!-- header end -->
+<!-- list content -->
+	<div class="fb-list-wrap">
+		<form class="list-form">
+			<ul class="step-box-1">
+				<li>
+					<label> <strong>*</strong>
+						区域
+					</label>
+					<span class="choose-box">
+						<select>
+							<option>请选择小区区域</option>
+							<option>不限</option>
+							<option>莲都</option>
+							<option>龙泉</option>
+							<option>青田</option>
+							<option>缙云</option>
+							<option>庆元</option>
+							<option>遂昌</option>
+							<option>松阳</option>
+							<option>云和</option>
+							<option>开发区</option>
+						</select>
+						<svg class="angle-right">
+							<use xlink:href="#icon-angle-right"></use>
+						</svg>
+					</span>
+				</li>
+				<li>
+					<label> <strong>*</strong>
+						小区名称
+					</label>
+					<span class="choose-box">
+						<select>
+							<option>请选择小区名称</option>
+							<option>育才小区</option>
+							<option>盛鼎还原</option>
+							<option>心仪家园</option>
+						</select>
+						<svg class="angle-right">
+							<use xlink:href="#icon-angle-right"></use>
+						</svg>
+					</span>
+				</li>
+				<li>
+					<label> <strong>*</strong>
+						类型
+					</label>
+					<span class="choose-box">
+						<select>
+							<option>请选择房屋类型</option>
+							<option>不限</option>
+							<option>普通住宅</option>
+							<option>别墅</option>
+							<option>商铺</option>
+							<option>其它</option>
+						</select>
+						<svg class="angle-right">
+							<use xlink:href="#icon-angle-right"></use>
+						</svg>
+					</span>
+				</li>
+				<li>
+					<label> <strong>*</strong>
+						户型
+					</label>
+					<span class="choose-box" style="padding-right:0.4rem">
+						<select>
+							<option>0</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>6<</option>
+						</select>室
+						<select>
+							<option>0</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>3<</option>
+						</select>厅
+						<select>
+							<option>0</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>3<</option>
+						</select>卫
+					</span>
+				</li>
+				<li>
+					<label> <strong>*</strong>
+						楼层
+					</label>
+					<span class="choose-box02"> <em>第</em>
+						<input type="text" class="area-input" placeholder="" maxlength="3" /> <em>层</em>
+						－
+						<em>共</em>
+						<input type="text" class="area-input" placeholder="" maxlength="3" />				
+						<em>层</em>
+					</span>
+				</li>
+				<li>
+					<label> <strong>*</strong>
+						面积
+					</label>
+					<span class="choose-box">
+						<input type="text" placeholder="" /><em>m²</em>
+					</span>
+				</li>
+				<li>
+					<label> <strong>*</strong>
+						出售总价
+					</label>
+					<span class="choose-box">
+						<input type="text" placeholder="" /><em>万元</em>
+					</span>
+				</li>
+				<li>
+					<label> <strong>*</strong>
+						朝向
+					</label>
+					<span class="choose-box">
+						<select>
+							<option>请选择房屋朝向</option>
+							<option>东</option>
+							<option>南</option>
+							<option>西</option>
+							<option>北</option>
+						</select>
+						<svg class="angle-right">
+							<use xlink:href="#icon-angle-right"></use>
+						</svg>
+					</span>
+				</li>
+				<li>
+					<label> <strong>*</strong>
+						建筑年代
+					</label>
+					<span class="choose-box">
+						<select>
+							<option>请选择建筑年代</option>
+							<option>不限</option>
+							<option>5年以内</option>
+							<option>5-10年</option>
+							<option>10-20年</option>
+							<option>20年以上</option>
+						</select>
+						<svg class="angle-right">
+							<use xlink:href="#icon-angle-right"></use>
+						</svg>
+					</span>
+				</li>
+				<a id="next_step" class="next-step-btn" href="javascript:;">下一步</a>
+			</ul>
+			<ul class="step-box-2">
+				<li>
+					<label> <strong>*</strong>
+						标题
+					</label>
+					<span class="choose-box04">
+						<input class="text-r" placeholder="小区名+户型+价格" />
+					</span>
+				</li>
+				<li>
+					<label> <strong>&nbsp;</strong>
+						房屋结构
+					</label>
+					<span class="choose-box">
+						<select>
+							<option>请选择建筑年代</option>
+							<option>平层</option>
+							<option>复式</option>
+							<option>跃层</option>
+							<option>错层</option>
+							<option>开间</option>
+						</select>
+						<svg class="angle-right">
+							<use xlink:href="#icon-angle-right"></use>
+						</svg>
+					</span>
+				</li>
+				<li>
+					<label> <strong>&nbsp;</strong>
+						产权
+					</label>
+					<span class="choose-box">
+						<select>
+							<option>请选择您的产权年限</option>
+							<option>商品房</option>
+							<option>商住两用</option>
+							<option>经济适用房</option>
+							<option>使用权</option>
+							<option>公房</option>
+							<option>其他</option>
+						</select>
+						<svg class="angle-right">
+							<use xlink:href="#icon-angle-right"></use>
+						</svg>
+					</span>
+				</li>
+				<li>
+					<label> <strong>&nbsp;</strong>
+						装修
+					</label>
+					<span class="choose-box">
+						<select>
+							<option>请选择您的房屋装修</option>
+							<option>简装</option>
+							<option>精装</option>
+						</select>
+						<svg class="angle-right">
+							<use xlink:href="#icon-angle-right"></use>
+						</svg>
+					</span>
+				</li>
+				<li>
+					<label> <strong>&nbsp;</strong>
+						电梯
+					</label>
+					<span class="choose-box02 pr-90">
+						<span class="switch-but-box"> <em>无</em>
+							<input type="checkbox" id="checkbox_c1" class="chk_3" />					
+							<label for="checkbox_c1"></label> <em>有</em>
+						</span>
+					</span>
+				</li>
+				<li>
+					<label> <strong>&nbsp;</strong>
+						柴间
+					</label>
+					<span class="choose-box02">
+						<span class="switch-but-box"> <em>无</em>
+							<input type="checkbox" id="checkbox_c2" class="chk_3" />					
+							<label for="checkbox_c2"></label> <em>有</em>
+						</span>
+						<input type="text" class="area-input" placeholder="" maxlength="3" />					
+						<em>m²</em>
+					</span>
+				</li>
+				<li>
+					<label> <strong>&nbsp;</strong>
+						其他说明
+					</label>
+					<span class="choose-box04">
+						<input type="text" />
+					</span>
+				</li>
+				<div class="fy-pic-box">
+					<h3>房源图片<span class="fize-color">（上传室内图片，吸引更多买家）</span></h3>
+					<div class="up-pic-box z_photo">
+						<section class="z_file fl">
+							<img src="images/a11.png" class="add-img">					
+							<input type="file" name="file" id="file" class="file" value="" accept="image/jpg,image/jpeg,image/png,image/bmp" multiple />					
+						</section>
+					</div>
+					<p class="fize-color">（图片大小建议：220*160px)</p>
+					<aside class="mask works-mask">
+						<div class="mask-content">
+							<p class="del-p">您确定要删除作品图片吗？</p>
+							<p class="check-p">
+								<span class="del-com wsdel-ok">确定</span>
+								<span class="wsdel-no">取消</span>
+							</p>
+						</div>
+					</aside>
+				</div>
+				<a id="next_step02" class="next-step-btn" href="javascript:;">下一步</a>
+			</ul>
+			<ul class="step-box-3">
+				<li>
+					<label> <strong>*</strong>
+						房产证号
+					</label>
+					<span class="choose-box04">
+						<input type="text" />
+					</span>
+				</li>
+				<li>
+					<label> <strong>*</strong>
+						房产权利人姓名
+					</label>
+					<span class="choose-box04">
+						<input type="text" />
+					</span>
+				</li>
+				<li>
+					<label> <strong>*</strong>
+						房产权利人身份证号
+					</label>
+					<span class="choose-box04">
+						<input type="text" />
+					</span>
+				</li>
+				<p class="tip-txt">
+					<strong>*</strong>我们将会查验房源的真实性，通过验证的房源会优先曝光，非常有利于成交。<br>
+<strong>&nbsp;</strong>我们郑重承诺绝不会向第三方泄露房产证（不动产登记证）及房源权利人的信息
+				</p>
+				<li>
+					<label> <strong>&nbsp;</strong>
+						联系人
+					</label>
+					<span class="choose-box04">
+						<input type="text" maxlength="" />
+					</span>
+					<span class="choose-box02">
+						<span class="switch-but-box"> <em>女士</em>
+							<input type="checkbox" id="checkbox_c3" class="chk_3" />					
+							<label for="checkbox_c3"></label> <em>先生</em>
+						</span>
+					</span>
+				</li>
+				<li>
+					<label> <strong>&nbsp;</strong>
+						手机号
+					</label>
+					<span class="choose-box04">
+						<input type="text" maxlength="11" />
+					</span>
+					<span class="choose-box02">
+						<a class="yz-code-but" href="javascript:;">60秒后重新获取</a>
+					</span>
+				</li>
+				<li>
+					<label> <strong>&nbsp;</strong>
+						请输入手机验证码
+					</label>
+					<span class="choose-box04">
+						<input type="text" />
+					</span>
+				</li>
+				<a id="fb_submit" class="next-step-btn">提交</a>
+			</ul>
+		</form>
+		<div class="fb-success">
+			<div class="icon-box">
+				<img src="images/fb-success-icon.png" />		
+			</div>
+			<h1>恭喜您，您的房源已经发布成功！</h1>
+			<p>
+				我们会在24小时内完成审核。<br>
+					有疑问请联系客服 400180-1806
+					<br>通过您的手机登录就可以管理房源！</p>
+					<a id="" class="next-step-btn" href="javascript:;">管理房源</a>
+		</div>
+	</div>
+<!-- list content end -->
+<!-- foot -->
+	<footer class="foot-wrap">
+		<div class="foot-con">
+			<a class="foot-menu fl" href="index.html">
+				<svg class="index-home01" aria-hidden="true">
+					<use xlink:href="#icon-home01"></use>
+				</svg>
+				<span class="menu-txt">首页</span>
+			</a>
+			<div class="foot-fb">
+				<a id="index_fb" class="fb-button" href="javascript:;">
+					<svg class="index-release" aria-hidden="true">
+						<use xlink:href="#icon-release"></use>
+					</svg>
+				</a>
+				<span class="menu-txt">发布</span>
+			</div>
+			<a class="foot-menu fr" href="login.html">
+				<svg class="index-my" aria-hidden="true">
+					<use xlink:href="#icon-my"></use>
+				</svg>
+				<span class="menu-txt">我的</span>
+			</a>
+		</div>
+	</footer>
+<!-- foot end -->
+<!-- release -->
+	<div class="index-release-wrap">
+		<div class="fb-but-box">
+			<div class="fb-top-but">
+				<div class="fy-but">
+					<a href="javascript:;">
+						<svg class="index-house-color" aria-hidden="true">
+							<use xlink:href="#icon-house-color"></use>
+						</svg>
+					</a>
+					<span>发布房源</span>
+				</div>
+				<div class="qg-but">
+					<a href="javascript:;">
+						<svg class="index-editor-color" aria-hidden="true">
+							<use xlink:href="#icon-editor-color"></use>
+						</svg>
+					</a>
+					<span>发布求购</span>
+				</div>
+			</div>
+			<div id="shut-down" class="shut-down">
+				<svg class="index-release-cancel" aria-hidden="true">
+					<use xlink:href="#icon-release-cancel"></use>
+				</svg>
+			</div>
+		</div>
+	</div>
+<!-- release end -->	
+</div>
+</body>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/helpers.js"></script>
+	<script type="text/javascript" src="js/imgUp.js"></script>
+</html>

@@ -1,0 +1,61 @@
+page-zx-list {
+    background: #fff;
+    .toolbar{
+        .toolbar-background{
+            background: #00ae66;
+        }
+        .button{
+            font-size:0.4rem;
+        }
+        .button-ios{
+            margin: 0px;
+            height:auto;
+            background:none;
+        }
+        .back-button{
+            position: absolute;
+            z-index: 10;
+        }
+    }
+
+    .toolbar-title{
+      font-size: 0.4rem;
+      color:#fff;
+  }
+  .back-button-ios{
+      font-size: 0.4rem;
+  }
+  .back-button-ios{
+      min-height:0.8rem;
+  }
+  .back-button-icon-ios{
+      font-size: 0.4rem;
+      color:#fff;
+  }
+  
+
+  .segment-ios{
+    .segment-button{
+      line-height:0.6rem;
+      height:0.6rem;
+      font-size:0.3rem;
+      background: #f6f6f6;
+      color:#888;
+      border:none;
+     }
+     .segment-button.segment-activated{
+          background: #f6f6f6;
+          color: #00ae66;
+        border-bottom: 3px solid #00ae66;
+     }
+  } 
+  
+  .segment-ios .segment-button:first-of-type {
+    margin-right: 0;
+    border-radius: 0px 0 0 0px;
+    }
+.segment-ios .segment-button:last-of-type {
+  margin-right: 0;
+  border-radius: 0px 0 0 0px;
+}
+}

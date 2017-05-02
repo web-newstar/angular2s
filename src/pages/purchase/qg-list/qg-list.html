@@ -1,0 +1,166 @@
+<!--
+  Generated template for the QgList page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <header>
+		<div class="list-header-wrap">
+			<div class="top-search">
+				<a href="javascript:;" goMain>
+					<svg class="icon-angle-left">
+						<use xlink:href="#icon-angle-left-copy"></use>
+					</svg>
+				</a>
+				<div class="search-input">
+					<svg class="icon-search" aria-hidden="true">
+						<use xlink:href="#icon-search"></use>
+					</svg>
+					<input type="text" placeholder="请输入您要搜索的关键词" />
+				</div>
+			</div>
+			<div class="screening-box">
+				<span id="locationList">
+					<a href="javascript:;">
+						<em>区域</em>
+						<svg class="icon-triangle-down">
+							<use xlink:href="#icon-triangle-down-copy"></use>
+						</svg>
+					</a>
+				</span>
+				<span id="typeList">
+					<a href="javascript:;">
+						<em>类型</em>
+						<svg class="icon-triangle-down">
+							<use xlink:href="#icon-triangle-down-copy"></use>
+						</svg>
+					</a>
+				</span>
+				<span id="priceList">
+					<a href="javascript:;">
+						<em>价格</em>
+						<svg class="icon-triangle-down">
+							<use xlink:href="#icon-triangle-down-copy"></use>
+						</svg>
+					</a>
+				</span>
+				<span id="areaList">
+					<a href="javascript:;">
+						<em>面积</em>
+						<svg class="icon-triangle-down">
+							<use xlink:href="#icon-triangle-down-copy"></use>
+						</svg>
+					</a>
+				</span>
+				<span id="moreList">
+					<a href="javascript:;">
+						<em>户型</em>
+						<svg class="icon-triangle-down">
+							<use xlink:href="#icon-triangle-down-copy"></use>
+						</svg>
+					</a>
+				</span>
+			</div>
+			<!-- screening list -->
+			<div class="locationCon" style="display: none">
+				<h2>区域</h2>
+				<ul class="locationList-box">
+					<li>不限</li>
+					<li>莲都</li>
+					<li>龙泉</li>
+					<li>青田</li>
+					<li>缙云</li>
+					<li>庆元</li>
+					<li>遂昌</li>
+					<li>松阳</li>
+					<li>云和</li>
+					<li class="border-none">开发区</li>
+				</ul>
+			</div>
+			<div class="typeCon" style="display: none">
+				<ul class="typeList-box">
+					<li>不限</li>
+					<li>普通住宅</li>
+					<li>别墅</li>
+					<li>商铺</li>
+					<li class="border-none">其它</li>
+				</ul>
+			</div>
+			<div class="priceCon" style="display: none">
+				<ul class="priceList-box">
+					<li>不限</li>
+					<li>50万以下</li>
+					<li>50-80万</li>
+					<li>80-100万</li>
+					<li>100-120万</li>
+					<li>120-150万</li>
+					<li>150-200万</li>
+					<li>200-300万</li>
+					<li>300万以上</li>
+					<li class="custom-line border-none">
+						<span>自定义价格</span>
+						<span>
+							<input class="input-define" type="text" placeholder="最低" maxlength="4" />
+						</span>
+						—
+						<span>
+							<input class="input-define" type="text" placeholder="最高" maxlength="4" />
+						</span>
+						<button class="determine-but">确定</button>
+					</li>
+				</ul>
+			</div>
+			<div class="areaCon" style="display: none">
+				<ul class="areaList-box">
+					<li>不限</li>
+					<li>50平以下</li>
+					<li>50-70平</li>
+					<li>70-90平</li>
+					<li>90-130平</li>
+					<li>130-150平</li>
+					<li>150-200平</li>
+					<li>200-300平</li>
+					<li>300平以上</li>
+					<li class="border-none"></li>
+				</ul>
+			</div>
+			<div class="moreCon" style="display: none">
+				<ul class="moreList-box moreType1 he1">
+					<li class="title">户型</li>
+					<li class="type">
+						<span>一室</span>
+						<span>二室</span>
+						<span>三室</span>
+						<span>四室</span>
+						<span>四室以上</span>
+					</li>
+				</ul>
+				<button id="filtrate-reset" class="remove-but">清空条件</button>
+				<button class="determine-but">确定</button>
+			</div>
+			<!-- screening list end -->
+		</div>
+	</header>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="line-list-box" *ngFor="let item of DataList">
+		<ul >
+			<li><a href="javascript:;" (click)="ItemClick(item)">
+				<span class="name">{{item.address}}</span>
+				<span class="type">{{item.houseS || 0}}室{{item.houseT || 0}}厅{{item.houseW}}卫{{item.houseC || 0}}厨</span>
+				<span class="price">{{item.housePrice}}万</span>
+			</a>
+    </li>
+    </ul>
+	</div>
+
+  <ion-infinite-scroll (ionInfinite)="doLoadData($event)" threshold="100px" *ngIf="CanLoadMore">
+   <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

@@ -1,0 +1,129 @@
+
+<ion-content>
+  <!-- header -->
+	<div class="body-bg">
+		<header class="ho-header">
+			<img class="header-bg" src="../assets/images/header-bg.jpg">
+			<div class="area-lable">
+				丽水
+				<svg class="index-angle-down" aria-hidden="true">
+					<use xlink:href="#icon-angle-down-copy"></use>
+				</svg>
+			</div>
+			<div class="search-wrap">
+        <div class="choose-lable" >
+					二手房
+					<svg class="index-triangle-down" aria-hidden="true">
+						<use xlink:href="#icon-triangle-down-copy"></use>
+					</svg>
+				</div>
+				<span class="line-middle"></span>
+				<div class="se-input-box">
+					<svg class="index-search" aria-hidden="true">
+						<use xlink:href="#icon-search"></use>
+					</svg>
+					<input type="text" placeholder="请输入您要搜索的关键词"/>			
+				</div>
+			</div>
+		</header>
+		<!-- header end -->
+		<!-- menu -->
+		<div class="fast-menu">
+			<a href="javascript:;" (click)="navClick('esf')" >
+				<div class="pic-container">
+					<img src="../assets/images/ershoufang.png" />
+				</div>
+				<span class="title">二手房</span>
+			</a>
+			<a href="javascript:;" (click)="navClick('zxq')">
+				<div class="pic-container">
+					<img src="../assets/images/xiaoqu.png" />
+				</div>
+				<span class="title">找小区</span>
+			</a>
+			<a href="javascript:;" (click)="navClick('zzj')">
+				<div class="pic-container" >
+					<img src="../assets/images/zhongjie.png" />
+				</div>
+				<span class="title">找中介</span>
+			</a>
+			<a href="javascript:;" (click)="navClick('qgxx')">
+				<div class="pic-container">
+					<img src="../assets/images/qiugou.png" />
+				</div>
+				<span class="title">求购信息</span>
+			</a>
+			<a href="javascript:;" (click)="navClick('fczx')">
+				<div class="pic-container">
+					<img src="../assets/images/zixun.png" />
+				</div>
+				<span class="title">房产资讯</span>
+			</a>
+		</div>
+		<!-- menu end -->
+		<!-- list content -->
+		<div class="list-wrap mt-20">
+			<h3 class="index-title">
+				<span>热门房源</span>
+				<a class="more" href="javascript:;" (click)="MoreClick('hothouse')">
+					<em>更多</em>
+					<svg class="index-angle-right" aria-hidden="true">
+						<use xlink:href="#icon-angle-right"></use>
+					</svg>
+				</a>
+			</h3>
+			<div class="list-item" *ngFor="let item of HotHouseDataList" (click)="HotHouseItemClick(item)">
+				<a href="javascript:;" >
+					<div class="pic-l">
+						<img src="{{BaseImgUrl+item.picturePath}}"></div>
+					<div class="txt-r">
+						<h3 class="area-name">{{item.houseName}}</h3>
+						<div class="same-line">
+							<span class="color-9">{{item.houseS}}室{{item.houseT}}厅</span>&nbsp;|
+							<span class="color-9">{{item.floorSpace}}m²</span>&nbsp;|
+							<span class="color-9">{{item.villageName}}</span>
+						</div>
+						<div class="lable-tip">
+							<span class="lable">中介</span>
+							<span class="lable">验证房源</span>
+						</div>
+						<div class="price-line">
+							<span class="focus">{{item.housePrice}}万</span>
+							<span class="color-9">{{item.avgPrice}}元/m²</span>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+		<div class="list-wrap change-list mt-20">
+			<h3 class="index-title">
+				<span>中介推荐</span>
+				<a class="more" href="javascript:;" (click)="MoreClick('agency')">
+					<em>更多</em>
+					<svg class="index-angle-right" aria-hidden="true">
+						<use xlink:href="#icon-angle-right"></use>
+					</svg>
+				</a>
+			</h3>
+
+			<div class="list-item" *ngFor="let item of AgencyDataList" (click)="AgencyItemClick(item)">
+				<a href="javascript:;">
+					<div class="pic-l">
+						<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1490267315752&di=5458748244b810e8f0496c2a104b4438&imgtype=0&src=http%3A%2F%2Fp2.gexing.com%2FG1%2FM00%2FBD%2F69%2FrBABFFHbf5-jOVk6AAAbZQyfsFc431_200x200_3.jpg"></div>
+					<div class="txt-r">
+						<h3 class="area-name">{{item.agencyName}}</h3>
+						<div class="same-line mt-25">
+							<span class="color-9">二套房源：<span class="color-8">{{item.totalCount}}</span>套</span>
+						</div>						
+						<div class="same-line">
+							<span class="color-9">成立时间：<span>{{item.years}}</span>年</span>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</ion-content>
+<!--<div>
+
+</div>-->

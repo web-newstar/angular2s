@@ -1,0 +1,97 @@
+<ion-header>
+
+  <header>
+		<div class="de-header02">
+			<a href="javascript:;" navPop>
+				<svg class="icon-angle-left">
+					<use xlink:href="#icon-angle-left-copy"></use>
+				</svg>
+			</a>
+			<h1>求购详情</h1>
+			<div class="but-box-r">
+				<a class="income-but" href="javascript:;">
+					<svg class="icon-wujiaoxing" aria-hidden="true">
+						<use xlink:href="#icon-wujiaoxing"></use>
+					</svg>
+				</a>
+				<a class="share-but" href="javascript:;">
+					<svg class="icon-share" aria-hidden="true">
+						<use xlink:href="#icon-share"></use>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</header>
+
+</ion-header>
+
+
+<ion-content>
+<div class="com-fb-time">
+		<h2>{{DataModel.address}}</h2>
+		<div class="info">
+			<div class="time">
+				发布时间：
+				<span>{{DataModel.approveTime}}</span>
+			</div>
+			<div class="browse">
+				浏览次数：
+				<span>{{DataModel.read}}</span>
+			</div>
+		</div>
+	</div>
+	<div class="de-forList">
+			<ul class="list-l">
+				<li>
+					<label>求购价：</label>
+					<span>{{DataModel.housePrice}}万</span>
+				</li>
+				<li>
+					<label>市（县）：</label>
+					<span>{{DataModel.cityName}}</span>
+				</li>
+				<li>
+					<label>户型：</label>
+					<span>{{DataModel.houseS}}室{{DataModel.houseS}}厅{{DataModel.houseC}}厨{{DataModel.houseW}}卫</span>
+				</li>
+				<li>
+					<label>面积：</label>
+					<span>{{DataModel.floorSpace1}}-{{DataModel.floorSpace2}}m²</span>
+				</li>
+				<li class="special-li">
+					<label>建筑年代：</label>
+					<span>{{DataModel.sellYear1}}年至{{DataModel.sellYear2}}年</span>
+				</li>
+				<li class="special-li">
+					<label>所处地段：</label>
+					<span>{{DataModel.address}}</span>
+				</li>
+				<li class="special-li">
+					<label>联系方式：</label>
+					<span>
+						{{DataModel.contactTelephone}}
+					</span>
+				</li>
+				<li>
+					<label>其他说明：</label>
+				</li>
+			</ul>
+			<ul class="list-r">
+				<li>
+					<label>房型：</label>
+					<span>{{DataModel.houseUse | houseusepipe}}</span>
+				</li>
+				<li>
+					<label>车库：</label>
+					<span>{{DataModel.isCar | haspipe}}</span>
+				</li>
+				<li>
+					<label>朝向：</label>
+					<span>{{DataModel.direction | directionpipe}}</span>
+				</li>
+			</ul>
+			<div class="paper-box fl">
+        {{DataModel.otherDes}}
+      </div>
+		</div>
+</ion-content>

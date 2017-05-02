@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>二手房-列表页</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="font-icon/iconfont.js"></script>
+</head>
+<body>
+	<!-- header -->
+	<header>
+		<div class="list-header-wrap">
+			<div class="top-search">
+				<a href="javascript:;" onClick="javascript :history.back(-1);">
+					<svg class="icon-angle-left">
+						<use xlink:href="#icon-angle-left-copy"></use>
+					</svg>
+				</a>
+				<div class="search-input">
+					<svg class="icon-search" aria-hidden="true">
+						<use xlink:href="#icon-search"></use>
+					</svg>
+					<input type="text" placeholder="请输入您要搜索的关键词" />		
+				</div>
+			</div>
+			<div class="screening-box">
+				<span id="locationList">
+					<a href="javascript:;">
+						<em>区域</em>
+						<svg class="icon-triangle-down">
+							<use xlink:href="#icon-triangle-down-copy"></use>
+						</svg>
+					</a>
+				</span>
+				<span id="priceList">
+					<a href="javascript:;">
+						<em>价格</em>
+						<svg class="icon-triangle-down">
+							<use xlink:href="#icon-triangle-down-copy"></use>
+						</svg>
+					</a>
+				</span>
+				<span id="areaList">
+					<a href="javascript:;">
+						<em>面积</em>
+						<svg class="icon-triangle-down">
+							<use xlink:href="#icon-triangle-down-copy"></use>
+						</svg>
+					</a>
+				</span>
+				<span id="moreList">
+					<a href="javascript:;">
+						<em>更多</em>
+						<svg class="icon-triangle-down">
+							<use xlink:href="#icon-triangle-down-copy"></use>
+						</svg>
+					</a>
+				</span>
+			</div>
+			<!-- screening list -->
+			<div class="locationCon" style="display: none">
+				<h2>区域</h2>
+				<ul class="locationList-box">
+					<li>不限</li>
+					<li>莲都</li>
+					<li>龙泉</li>
+					<li>青田</li>
+					<li>缙云</li>
+					<li>庆元</li>
+					<li>遂昌</li>
+					<li>松阳</li>
+					<li>云和</li>
+					<li class="border-none">开发区</li>
+				</ul>
+			</div>
+			<div class="priceCon" style="display: none">
+				<ul class="priceList-box">
+					<li>不限</li>
+					<li>50万以下</li>
+					<li>50-80万</li>
+					<li>80-100万</li>
+					<li>100-120万</li>
+					<li>120-150万</li>
+					<li>150-200万</li>
+					<li>200-300万</li>
+					<li>300万以上</li>
+					<li class="custom-line border-none"><span>自定义价格</span><span><input class="input-define" type="text" placeholder="最低" maxlength="4" /></span>—<span><input class="input-define" type="text" placeholder="最高" maxlength="4" /></span><button class="determine-but">确定</button></li>
+				</ul>
+			</div>
+			<div class="areaCon" style="display: none">
+				<ul class="areaList-box">
+					<li>不限</li>
+					<li>50平以下</li>
+					<li>50-70平</li>
+					<li>70-90平</li>
+					<li>90-130平</li>
+					<li>130-150平</li>
+					<li>150-200平</li>
+					<li>200-300平</li>
+					<li>300平以上</li>
+					<li class="border-none"></li>
+				</ul>
+			</div>
+			<div class="moreCon" style="display: none">
+				<ul class="moreList-box moreType1 he1">
+					<li class="title">户型</li>
+					<li class="type">
+						<span>一室</span>
+						<span>二室</span>
+						<span>三室</span>
+						<span>四室</span>
+						<span>四室以上</span>
+					</li>
+				</ul>
+				<ul class="moreList-box moreType2 he2">
+					<li class="title">来源</li>
+					<li class="type">
+						<span>个人</span>
+						<span>中介</span>
+					</li>
+				</ul>
+				<button id="filtrate-reset" class="remove-but">清空条件</button>
+				<button class="determine-but">确定</button>
+			</div>
+			<!-- screening list end -->
+		</div>
+	</header>
+	<!-- header end -->
+	<!-- list content -->
+	<div id="wrapper">
+		<div class="list-wrap scroller">
+		<div id="list-item-box" class="list-item-box">
+			<div class="list-item">
+				<a href="esfList-detail.html">
+					<div class="pic-l">
+						<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1490258855241&di=ec2974015608942d7b8841202d778539&imgtype=0&src=http%3A%2F%2Fimg.uuhy.com%2Fuploads%2F2010%2F06%2F60ac_d6b8_02-Alive-and-loving-it-macro-photography.jpg"></div>
+					<div class="txt-r">
+						<h3 class="area-name">瑞虹新城瑞虹新城瑞虹1111111111111111</h3>
+						<div class="same-line">
+							<span class="color-9">3室1厅</span>&nbsp;|
+							<span class="color-9">130m²</span>&nbsp;|
+							<span class="color-9">迎园小区</span>
+						</div>
+						<div class="lable-tip">
+							<span class="lable">中介</span>
+							<span class="lable">验证房源</span>
+						</div>
+						<div class="price-line">
+							<span class="focus">1200万</span>
+							<span class="color-9">10000元/m²</span>
+						</div>
+					</div>
+				</a>
+			</div>
+
+			<div class="list-item">
+				<a href="esfList-detail.html">
+					<div class="pic-l">
+						<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1490265385824&di=c5b8b041576b0ef7ed81920ee131e491&imgtype=0&src=http%3A%2F%2Fi1.article.fd.zol-img.com.cn%2Ft_s640x2000%2Fg5%2FM00%2F00%2F03%2FChMkJlYp1UeIPe78AAIw4QEANI0AAEAWgMob7oAAjD5701.jpg"></div>
+					<div class="txt-r">
+						<h3 class="area-name">瑞虹新城瑞虹新城瑞虹1111111111111111</h3>
+						<div class="same-line">
+							<span class="color-9">3室1厅</span>&nbsp;|
+							<span class="color-9">130m²</span>&nbsp;|
+							<span class="color-9">迎园小区</span>
+						</div>
+						<div class="lable-tip">
+							<span class="lable">中介</span>
+							<span class="lable">验证房源</span>
+						</div>
+						<div class="price-line">
+							<span class="focus">1200万</span>
+							<span class="color-9">10000元/m²</span>
+						</div>
+					</div>
+				</a>
+			</div>
+
+			<div class="list-item">
+				<a href="esfList-detail.html">
+					<div class="pic-l">
+						<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1490265385822&di=96d6145460ada7bdac785cba57b28724&imgtype=0&src=http%3A%2F%2Fwww.yuyihz.com%2Fuserfile%2Fimage%2F201512%2F20151219115741_4222.jpg"></div>
+					<div class="txt-r">
+						<h3 class="area-name">瑞虹新城瑞虹新城瑞虹1111111111111111</h3>
+						<div class="same-line">
+							<span class="color-9">3室1厅</span>&nbsp;|
+							<span class="color-9">130m²</span>&nbsp;|
+							<span class="color-9">迎园小区</span>
+						</div>
+						<div class="lable-tip">
+							<span class="lable">中介</span>
+							<span class="lable">验证房源</span>
+						</div>
+						<div class="price-line">
+							<span class="focus">1200万</span>
+							<span class="color-9">10000元/m²</span>
+						</div>
+					</div>
+				</a>
+			</div>
+
+			<!-- <div class="list-item">
+				<a href="javascript:;">
+					<div class="pic-l">
+						<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1490265385824&di=c5b8b041576b0ef7ed81920ee131e491&imgtype=0&src=http%3A%2F%2Fi1.article.fd.zol-img.com.cn%2Ft_s640x2000%2Fg5%2FM00%2F00%2F03%2FChMkJlYp1UeIPe78AAIw4QEANI0AAEAWgMob7oAAjD5701.jpg"></div>
+					<div class="txt-r">
+						<h3 class="area-name">瑞虹新城瑞虹新城瑞虹1111111111111111</h3>
+						<div class="same-line">
+							<span class="color-9">3室1厅</span>&nbsp;|
+							<span class="color-9">130m²</span>&nbsp;|
+							<span class="color-9">迎园小区</span>
+						</div>
+						<div class="lable-tip">
+							<span class="lable">中介</span>
+							<span class="lable">验证房源</span>
+						</div>
+						<div class="price-line">
+							<span class="focus">1200万</span>
+							<span class="color-9">10000元/m²</span>
+						</div>
+					</div>
+				</a>
+			</div> -->
+		</div>
+			<div class="more"><i class="pull_icon"></i><span>上拉加载...</span></div>
+		</div>
+	</div>
+		<!-- list content end -->
+	</div>
+	<!-- foot -->
+	<footer class="foot-wrap">
+		<div class="foot-con">
+			<a class="foot-menu fl" href="index.html">
+				<svg class="index-home01" aria-hidden="true">
+					<use xlink:href="#icon-home01"></use>
+				</svg>
+				<span class="menu-txt">首页</span>
+			</a>
+			<div class="foot-fb">
+				<a id="index_fb" class="fb-button" href="javascript:;">
+					<svg class="index-release" aria-hidden="true">
+						<use xlink:href="#icon-release"></use>
+					</svg>
+				</a>
+				<span class="menu-txt">发布</span>
+			</div>
+			<a class="foot-menu fr" href="login.html">
+				<svg class="index-my" aria-hidden="true">
+					<use xlink:href="#icon-my"></use>
+				</svg>
+				<span class="menu-txt">我的</span>
+			</a>
+		</div>
+	</footer>
+	<!-- foot end -->
+	<!-- release -->
+	<div class="index-release-wrap">
+		<div class="fb-but-box">
+			<div class="fb-top-but">
+				<div class="fy-but">
+					<a href="javascript:;">
+						<svg class="index-house-color" aria-hidden="true">
+							<use xlink:href="#icon-house-color"></use>
+						</svg>
+					</a>
+					<span>发布房源</span>
+				</div>
+				<div class="qg-but">
+					<a href="javascript:;">
+						<svg class="index-editor-color" aria-hidden="true">
+							<use xlink:href="#icon-editor-color"></use>
+						</svg>
+					</a>
+					<span>发布求购</span>
+				</div>
+			</div>
+			<div id="shut-down" class="shut-down">
+				<svg class="index-release-cancel" aria-hidden="true">
+					<use xlink:href="#icon-release-cancel"></use>
+				</svg>
+			</div>
+		</div>
+	</div>
+	<!-- release end -->
+	<!-- sorting -->
+	<div class="sorting-but">
+		<svg class="icon-direction-arrow" aria-hidden="true">
+			<use xlink:href="#icon-direction-arrow"></use>
+		</svg>
+		<svg class="icon-direction-arrow02" aria-hidden="true">
+			<use xlink:href="#icon-direction-arrow02"></use>
+		</svg>
+		排序
+	</div>
+	<!-- sorting end -->
+</body>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/helpers.js"></script>
+	<script type="text/javascript" src="js/iscroll.js"></script>
+	<script>
+		var myscroll = new iScroll("wrapper",{
+			onScrollMove:function(){
+				if (this.y<(this.maxScrollY)) {
+					$('.pull_icon').addClass('flip');
+					$('.pull_icon').removeClass('loading');
+					$('.more span').text('释放加载...');
+				}else{
+					$('.pull_icon').removeClass('flip loading');
+					$('.more span').text('上拉加载...')
+				}
+			},
+			onScrollEnd:function(){
+				if ($('.pull_icon').hasClass('flip')) {
+					$('.pull_icon').addClass('loading');
+					$('.more span').text('加载中...');
+					pullUpAction();
+				}
+				
+			},
+			onRefresh:function(){
+				$('.more').removeClass('flip');
+				$('.more span').text('上拉加载...');
+			}
+			
+		});
+		
+		function pullUpAction(){
+			setTimeout(function(){
+				for (var i = 0; i < 2; i++) {
+					$('.scroller .list-item-box').append("<li>一只将死之猿!</li>");
+				}
+				myscroll.refresh();
+			}, 1000)
+		}
+		if ($('.scroller').height()>$('#wrapper').height()) {
+			$('.more').hide();
+			myscroll.destroy();
+		}
+
+		/*单指拖动*/
+		//var marTop = document.getElementById('marTop');
+		var listItem = document.getElementById('list-item-box');
+		listItem.addEventListener('touchmove', function(event) {
+		     // 如果这个元素的位置内只有一个手指的话
+		    if (event.targetTouches.length == 1) {
+		　　　　 event.preventDefault();// 阻止浏览器默认事件，重要 
+		        listItem.style.paddingBottom = 0.5 + 'rem';
+		        }
+		}, false);
+
+	</script>
+</html>

@@ -1,0 +1,188 @@
+
+<ion-content>
+<div class="body-bg" style="padding:0">
+		<div class="pic-rolling-box">
+			<div class="top-operation-but">
+				<div class="but-box-l">
+					<a class="home-but" goMain>
+						<svg class="icon-home" aria-hidden="true">
+							<use xlink:href="#icon-home"></use>
+						</svg>
+					</a>
+				</div>
+				<div class="but-box-r">
+					<a class="income-but" href="javascript:;">
+						<svg class="icon-wujiaoxing" aria-hidden="true">
+							<use xlink:href="#icon-wujiaoxing"></use>
+						</svg>
+					</a>
+					<a class="share-but" href="javascript:;">
+						<svg class="icon-share" aria-hidden="true">
+							<use xlink:href="#icon-share"></use>
+						</svg>
+					</a>
+				</div>
+			</div>
+			<!-- 图片切换 -->
+			<div class="hdp-box">
+                <ion-slides #mySlider [options]="mySlideOptions" pager="true">
+                    <ion-slide  *ngFor="let item of DataModel.ImgArray"  >
+                        <img src="{{BaseImgUrl + item.storagePath}}">
+                    </ion-slide>
+                </ion-slides>
+			</div>
+			<!-- 图片切换 结束 -->
+		</div>
+		<div class="de-title">
+			<h2>{{DataModel.name}}</h2>
+			<span class="lable">{{DataModel.houseType | housetagpipe}}</span>
+		</div>
+		<div class="de-focus">
+			<dl>
+				<dt>售价</dt>
+				<dd>{{DataModel.housePrice}}万</dd>
+			</dl>
+			<dl>
+				<dt>户型</dt>
+				<dd>{{DataModel.houseS || 0}}室{{DataModel.houseT || 0}}厅{{DataModel.houseW || 0}}卫</dd>
+			</dl>
+			<dl>
+				<dt>面积</dt>
+				<dd>{{DataModel.floorSpace}}m²</dd>
+			</dl>
+		</div>
+		<div class="de-forList">
+			<ul class="list-l">
+				<li>
+					<label>单价：</label>
+					<span>{{DataModel.avgPrice}}/平</span>
+				</li>
+				<li>
+					<label>类型：</label>
+					<span>{{DataModel.houseUse | houseusepipe}}</span>
+				</li>
+				<li>
+					<label>户型：</label>
+					<span>{{DataModel.houseS || 0}}室{{DataModel.houseT || 0}}厅{{DataModel.houseW || 0}}卫</span>
+				</li>
+				<li>
+					<label>面积：</label>
+					<span>{{DataModel.floorSpace}}m²</span>
+				</li>
+				<li>
+					<label>朝向：</label>
+					<span>{{DataModel.direction | directionpipe}}</span>
+				</li>
+				<li>
+					<label>电梯：</label>
+					<span>{{DataModel.isHovel | haspipe}}</span>
+				</li>
+				<li>
+					<label>车库：</label>
+					<span>{{DataModel.isCar | haspipe}}</span>
+				</li>
+				<li>
+					<label>其他说明：</label>
+					<span>{{DataModel.otherDes}}</span>
+				</li>
+				<li>
+					<label>小区：</label>
+					<span>{{DataModel.plotName}}</span>
+				</li>
+			</ul>
+			<ul class="list-r">
+				<li>
+					<label>发布时间：</label>
+					<span>{{DataModel.buildTime | dateformatpipe:'YYYY-MM-DD'}}</span>
+				</li>
+				<li>
+					<label>楼层：</label>
+					<span>第{{DataModel.houseFloor || 0}}层/共{{DataModel.floorTotal || 0}}层</span>
+				</li>
+				<li>
+					<label>结构：</label>
+					<span>{{DataModel.structureType | structtypepipe}}</span>
+				</li>
+				<li>
+					<label>年代：</label>
+					<span>{{DataModel.sellYear}}年</span>
+				</li>
+				<li>
+					<label>装修：</label>
+					<span>{{DataModel.decorateType | decoratetypepipe }}</span>
+				</li>
+				<li>
+					<label>产权：</label>
+					<span>{{DataModel.propertyType | propertytypepipe }}</span>
+				</li>
+				<li>
+					<label>柴间：</label>
+					<span>{{DataModel.hovelSpace || 0 }}平米</span>
+				</li>
+				<li>
+					<label></label>
+					<span></span>
+				</li>
+				<li *ngIf="false">
+					<label>查看地图：</label>
+					<span>
+						<svg class="icon-map">
+							<use xlink:href="#icon-map"></use>
+						</svg>
+					</span>
+				</li>
+			</ul>
+		</div>
+		<div class="de-forList02">
+			<ul>
+				<li><label>中介名称：</label><span>{{DataModel.villageName}}</span></li>
+				<li><label>联系人：</label><span>{{DataModel.contactName}}</span></li>
+				<li><label>联系电话：</label><span>{{DataModel.contactPhone == null ? '':'/'+DataModel.contactPhone}}{{DataModel.contactMobilephone}}</span></li>
+			</ul>
+		</div>
+		<div class="list-wrap mt-20">
+			<h3 class="index-title">
+				<span>热门房源</span>
+				<a class="more" href="javascript:;" (click)="MoreClick('hothouse')">
+					<em>更多</em>
+					<svg class="index-angle-right" aria-hidden="true">
+						<use xlink:href="#icon-angle-right"></use>
+					</svg>
+				</a>
+			</h3>
+			<div class="list-item" *ngFor="let item of HotHouseDataList">
+				<a href="javascript:;" (click)="ItemClick(item)">
+					<div class="pic-l">
+						<img src="{{BaseImgUrl+item.picturePath}}"></div>
+					<div class="txt-r">
+						<h3 class="area-name">{{item.houseName}}</h3>
+						<div class="same-line">
+							<span class="color-9">{{item.houseS}}室{{item.houseT}}厅</span>&nbsp;|
+							<span class="color-9">{{item.floorSpace}}m²</span>&nbsp;|
+							<span class="color-9">{{item.villageName}}</span>
+						</div>
+						<div class="price-line">
+							<span class="focus">{{item.housePrice}}万</span>
+							<span class="color-9">{{item.avgPrice}}元/m²</span>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+		<div class="bottom-operation-but">
+			<a class="mobile-but" href="tel:114">
+				<svg class="icon-mobile">
+					<use xlink:href="#icon-mobile"></use>
+				</svg>
+				致电
+			</a>
+			<a class="sms-but" href="sms:114">
+				<svg class="icon-sms">
+					<use xlink:href="#icon-sms"></use>
+				</svg>
+				短信
+			</a>
+		</div>
+	</div>
+</ion-content>
+

@@ -1,0 +1,32 @@
+
+<ion-header class="new-header">
+  <ion-navbar hideBackButton="false">
+    <ion-title>个人信息</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="bg-color">
+  <section class="item">
+    <input class="input-base" type="text" placeholder="请输入手机号" maxlength="11"/>
+    <button class="acquire-code">获取验证码</button>
+  </section>
+  <section class="item">
+    <input class="input-base" type="text" placeholder="请输入验证码" maxlength="8"/>
+  </section>
+  <section class="item">
+    <input class="input-base" type="text" placeholder="姓名" maxlength="8"/>
+  </section>
+  <section class="item">
+    <span class="l-txt">性别</span>
+    <span class="switches-but">
+      <em>男</em>
+      <div class="middle-but"><ion-toggle checked="false"></ion-toggle></div>
+      <em>女</em>
+    </span>
+  </section>
+  <button class="perfect-info-but" (click)="submitBut()">提交</button>
+  <script>
+    alert(111);
+  </script>
+</ion-content>

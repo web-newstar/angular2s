@@ -1,0 +1,39 @@
+page-gr-info-list {
+    .bg-color{
+        background-color: #eeeef3;
+    }
+    .list{
+        .item{
+            padding-left: 0;
+            .item-inner{
+                padding-left: 8px;
+                border: 0;
+                background-position: right 8px center;
+            }
+        }
+        .item-block{
+            min-height: 0.8rem;
+            font-size: 0.24rem;
+        }
+        .item-block:first-child{
+            border: 0;
+        }
+        .item-block:last-child{
+            border: 0;
+        }
+        .label-l{
+            color: #888;
+            font-size: 0.26rem;
+        }
+        .label-r{
+            color: #333;
+        }
+        .mt-20{
+            margin-top: 0.2rem;
+        }
+        .mt-10{
+            margin-top: 0.1rem;
+            border: 0;
+        }
+    }
+}

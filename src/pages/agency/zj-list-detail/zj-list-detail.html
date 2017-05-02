@@ -1,0 +1,59 @@
+<!--
+  Generated template for the ZjListDetail page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{DataModel.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="contact-info">
+		<div class="pic-box"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1490762436300&di=1242e422a354baf55b4fac3630d909cc&imgtype=0&src=http%3A%2F%2Fimga.mumayi.com%2Fandroid%2Fimg_google%2F2013%2F09%2F26%2Fcom.hd.live.wallpaper.beauty.anime%2Fcomhdlivewallpaperbeautyanime_litpic_2.jpg" /></div>
+		<div class="txt-r-box">
+			<h3>{{DataModel.abbreviated}}</h3>
+			<div class="line-q">
+				<label>联系人：</label>
+				<span>{{DataModel.contactName}}</span>
+			</div>
+			<div class="line-q">
+				<label>联系电话：</label>
+			</div>
+			<p class="line-q">{{DataModel.contactTelphone}}</p>
+			<p class="line-q">{{DataModel.contactMobilephone}}</p>
+		</div>
+	</div>
+	<div class="de-forList">
+		<ul class="list-l">
+			<li>
+				<label>全称：</label>
+				<span>{{DataModel.name}}</span>
+			</li>
+			<li>
+				<label>所在区（县）：</label>
+				<span>{{DataModel.districtName}}</span>
+			</li>
+			<li>
+				<label>门店地址：</label>
+				<span>{{DataModel.address}}</span>
+			</li>
+			<li>
+				<label>成立时间：</label>
+				<span>{{DataModel.years}}年</span>
+			</li>
+			<li>
+				<label>店铺介绍：</label>
+				<span></span>
+			</li>
+			<li class="introdu-box">
+				{{DataModel.operateContent}}
+			</li>
+		</ul>
+	</div>
+	<div><a class="other-f-but" href="javascript:;" (click)="ShowMoreHouse()">查看{{DataModel.totalCount}}套二手房源</a></div>
+	<div class="clear"></div>
+</ion-content>

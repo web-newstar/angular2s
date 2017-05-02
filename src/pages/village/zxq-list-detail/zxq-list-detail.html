@@ -1,0 +1,200 @@
+<!--
+  Generated template for the ZxqListDetail page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{DataModel.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content >
+		<div class="de-pic-box">
+			<img src="{{BaseImgUrl + DataModel.picturePath}}" />
+		</div>
+		<div class="de-labl-title">
+			小区信息
+		</div>
+		<div class="de-forList">
+			<ul class="list-l">
+				<li>
+					<label>小区名称：</label>
+					<span>{{DataModel.name}}</span>
+				</li>
+				<li>
+					<label>物业类型：</label>
+					<span>{{1}}</span>
+				</li>
+				<li>
+					<label>物业公司：</label>
+					<span>{{DataModel.estateCompany}}</span>
+				</li>
+				<li class="special-li02">
+					<label>公交路线：</label>
+					<span>{{DataModel.carLine}}</span>
+				</li>
+				<li>
+					<label>挂牌房源：</label>
+					<span>{{DataModel.totalCount}}套</span>
+				</li>
+				<li class="special-li">
+					<label>小区地址：</label>
+					<span>{{DataModel.address}}</span>
+				</li>
+				<li *ngIf="false">
+					<label>查看地图：</label>
+					<span>
+						<svg class="icon-map">
+							<use xlink:href="#icon-map"></use>
+						</svg>
+					</span>
+				</li>
+			</ul>
+			<ul class="list-r">
+				<li>
+					<label>区域所属：</label>
+					<span>{{DataModel.districtName}}</span>
+				</li>
+				<li>
+					<label>建筑年代：</label>
+					<span>{{DataModel.sellYear}}</span>
+				</li>
+				<li>
+					<label>物业费：</label>
+					<span>{{DataModel.estatePrice}}月/m²</span>
+				</li>
+			</ul>
+		</div>
+	<!-- list content -->
+		<div class="list-wrap mt-20">
+			<h3 class="index-title">
+				<span>附近小区</span>
+				<a class="more" href="javascript:;" (click)="MoreClick()"> <em>更多</em>
+					<svg class="index-angle-right" aria-hidden="true">
+						<use xlink:href="#icon-angle-right"></use>
+					</svg>
+				</a>
+			</h3>
+
+			<div class="list-item" *ngFor="let item of DataList" (click)="ItemClick(item)">
+				<a href="javascript:;">
+					<div class="pic-l">
+						<img src="{{item.picturePath == null ? '/assets/images/zhongj_default.jpg':(BaseImgUrl +item.picturePath) }}"></div>
+					<div class="txt-r">
+						<h3 class="area-name">{{item.plotName}}</h3>
+						<div class="same-line">
+							<span class="color-9">
+								挂牌房源：
+								<span class="color-8">{{item.totalCount}}</span>
+								套
+							</span>
+						</div>
+						<div class="same-line">
+							<span class="color-9">
+								成交均价：
+								<span>10000元/m²</span>
+							</span>
+						</div>
+						<div class="same-line">
+							<span class="color-9">
+								建筑年代：
+								<span>2001</span>
+								年
+							</span>
+						</div>
+					</div>
+				</a>
+			</div>
+
+			<div class="list-item">
+				<a href="zxqList-detail.html">
+					<div class="pic-l">
+						<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1490697108892&di=fcd0fd077b009b65eca349d0fd35b6c7&imgtype=0&src=http%3A%2F%2Fp2.wmpic.me%2Farticle%2F2015%2F03%2F06%2F1425604042_FbuHaZDB_215x185.jpg"></div>
+					<div class="txt-r">
+						<h3 class="area-name">瑞虹新城瑞虹新城瑞虹1111111111111111</h3>
+						<div class="same-line">
+							<span class="color-9">
+								挂牌房源：
+								<span class="color-8">5</span>
+								套
+							</span>
+						</div>
+						<div class="same-line">
+							<span class="color-9">
+								成交均价：
+								<span>10000元/m²</span>
+							</span>
+						</div>
+						<div class="same-line">
+							<span class="color-9">
+								建筑年代：
+								<span>2001</span>
+								年
+							</span>
+						</div>
+					</div>
+				</a>
+			</div>
+
+			<div class="list-item">
+				<a href="zxqList-detail.html">
+					<div class="pic-l">
+						<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1490697108893&di=cc8ec6cce2a79c2e05d02046d59ea2bd&imgtype=0&src=http%3A%2F%2Ftx.haiqq.com%2Fuploads%2Fallimg%2F150326%2F1P01UN3-8.jpg"></div>
+					<div class="txt-r">
+						<h3 class="area-name">瑞虹新城瑞虹新城瑞虹1111111111111111</h3>
+						<div class="same-line">
+							<span class="color-9">
+								挂牌房源：
+								<span class="color-8">5</span>
+								套
+							</span>
+						</div>
+						<div class="same-line">
+							<span class="color-9">
+								成交均价：
+								<span>10000元/m²</span>
+							</span>
+						</div>
+						<div class="same-line">
+							<span class="color-9">
+								建筑年代：
+								<span>2001</span>
+								年
+							</span>
+						</div>
+					</div>
+				</a>
+			</div>
+
+			<div class="list-item">
+				<a href="zxqList-detail.html">
+					<div class="pic-l">
+						<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1490697108893&di=b151bfd3db3912b56bd20c74a629430e&imgtype=0&src=http%3A%2F%2Fwww.ld12.com%2Fupimg358%2Fallimg%2F20160825%2F2et011hyof4433.jpg"></div>
+					<div class="txt-r">
+						<h3 class="area-name">瑞虹新城瑞虹新城瑞虹1111111111111111</h3>
+						<div class="same-line">
+							<span class="color-9">
+								挂牌房源：
+								<span class="color-8">5</span>
+								套
+							</span>
+						</div>
+						<div class="same-line">
+							<span class="color-9">
+								成交均价：
+								<span>10000元/m²</span>
+							</span>
+						</div>
+						<div class="same-line">
+							<span class="color-9">
+								建筑年代：
+								<span>2001</span>
+								年
+							</span>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+</ion-content>

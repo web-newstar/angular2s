@@ -1,0 +1,157 @@
+<ion-header>
+  <ion-navbar hideBackButton="false">
+    <!--<button ion-button icon-only (click)="goMain()">
+     <ion-icon name="arrow-back"></ion-icon>
+    </button>-->
+    <ion-title>新闻</ion-title>
+  </ion-navbar>
+
+	<div>
+  <ion-segment [(ngModel)]="data.zx">
+    <ion-segment-button value="bdkx" (click)="TypeClick()">
+      本地快讯
+    </ion-segment-button>
+    <ion-segment-button value="gnzx" (click)="TypeClick()">
+      国内新闻
+    </ion-segment-button>
+    <ion-segment-button value="zcfg" (click)="TypeClick()">
+      政策法规
+    </ion-segment-button>
+  </ion-segment>
+</div>
+
+</ion-header>
+<ion-content>
+  
+
+<div [ngSwitch]="data.zx">
+	<div *ngSwitchCase="'bdkx'">
+		<ion-list no-lines>
+			<ion-item *ngFor="let item of bdkxDataList" >
+				<div class="list-line-box" (click)="ItemClick(item)">
+					<a class="he4" href="javascript:;" *ngIf="false">
+						<div class="pic-l">
+							<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1490849068112&di=8ad1c9f3e76a07e3a198069ef1893d08&imgtype=0&src=http%3A%2F%2Fimg01.tobosu.net%2Fmanage%2Fbase%2Fpiccase%2Fsmall%2Ftbs20137131641459.jpg" />
+						</div>
+						<div class="txt-r">
+							<h3>习主席五年来在解放军代表团都着重讲了啥</h3>
+							<div class="time">
+								<svg class="icon-time" aria-hidden="true">
+									<use xlink:href="#icon-time"></use>
+								</svg>
+								<span>2017/3/30</span>
+							</div>
+						</div>
+					</a>
+
+					<a href="javascript:;">
+						<div class="txt-r">
+							<h3>{{item.title}}</h3>
+							<div class="time">
+								<svg class="icon-time" aria-hidden="true">
+									<use xlink:href="#icon-time"></use>
+								</svg>
+								<span>{{item.approveTime}}</span>
+							</div>
+						</div>
+					</a>
+
+				</div>
+			</ion-item>
+		</ion-list>
+		<ion-infinite-scroll (ionInfinite)="doLoadData($event,'bdkx')" *ngIf="PageObject.bdkxCanLoadMore">
+       <ion-infinite-scroll-content
+         loadingSpinner="bubbles"
+         loadingText="正在加载更多数据...">
+       </ion-infinite-scroll-content>
+     </ion-infinite-scroll>
+	</div>
+
+	<div *ngSwitchCase="'gnzx'">
+		<ion-list no-lines>
+			<ion-item *ngFor="let item of gnzxDataList" >
+				<div class="list-line-box" (click)="ItemClick(item)">
+					<a class="he4" href="javascript:;" *ngIf="false">
+						<div class="pic-l">
+							<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1490849068112&di=8ad1c9f3e76a07e3a198069ef1893d08&imgtype=0&src=http%3A%2F%2Fimg01.tobosu.net%2Fmanage%2Fbase%2Fpiccase%2Fsmall%2Ftbs20137131641459.jpg" />
+						</div>
+						<div class="txt-r">
+							<h3>习主席五年来在解放军代表团都着重讲了啥</h3>
+							<div class="time">
+								<svg class="icon-time" aria-hidden="true">
+									<use xlink:href="#icon-time"></use>
+								</svg>
+								<span>2017/3/30</span>
+							</div>
+						</div>
+					</a>
+
+					<a href="javascript:;">
+						<div class="txt-r">
+							<h3>{{item.title}}</h3>
+							<div class="time">
+								<svg class="icon-time" aria-hidden="true">
+									<use xlink:href="#icon-time"></use>
+								</svg>
+								<span>{{item.approveTime}}</span>
+							</div>
+						</div>
+					</a>
+
+				</div>
+			</ion-item>
+		</ion-list>
+		<ion-infinite-scroll (ionInfinite)="doLoadData($event,'gnzx')" *ngIf="PageObject.gnzxCanLoadMore">
+       <ion-infinite-scroll-content
+         loadingSpinner="bubbles"
+         loadingText="正在加载更多数据...">
+       </ion-infinite-scroll-content>
+     </ion-infinite-scroll>
+	</div>
+
+  <div *ngSwitchCase="'zcfg'">
+			<ion-list no-lines>
+				<ion-item *ngFor="let item of zcfgDataList" >
+					<div class="list-line-box" (click)="ItemClick(item)">
+						<a class="he4" href="javascript:;" *ngIf="false">
+							<div class="pic-l">
+								<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1490849068112&di=8ad1c9f3e76a07e3a198069ef1893d08&imgtype=0&src=http%3A%2F%2Fimg01.tobosu.net%2Fmanage%2Fbase%2Fpiccase%2Fsmall%2Ftbs20137131641459.jpg" />
+							</div>
+							<div class="txt-r">
+								<h3>习主席五年来在解放军代表团都着重讲了啥</h3>
+								<div class="time">
+									<svg class="icon-time" aria-hidden="true">
+										<use xlink:href="#icon-time"></use>
+									</svg>
+									<span>2017/3/30</span>
+								</div>
+							</div>
+						</a>
+
+						<a href="javascript:;">
+							<div class="txt-r">
+								<h3>{{item.title}}</h3>
+								<div class="time">
+									<svg class="icon-time" aria-hidden="true">
+										<use xlink:href="#icon-time"></use>
+									</svg>
+									<span>{{item.approveTime}}</span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</ion-item>
+			</ion-list>
+			<ion-infinite-scroll (ionInfinite)="doLoadData($event,'zcfg')" *ngIf="PageObject.zcfgCanLoadMore">
+       <ion-infinite-scroll-content
+         loadingSpinner="bubbles"
+         loadingText="正在加载更多数据...">
+       </ion-infinite-scroll-content>
+     	</ion-infinite-scroll>
+	</div>
+
+</div>
+</ion-content>
+
+
